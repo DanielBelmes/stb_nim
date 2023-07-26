@@ -1,6 +1,10 @@
-{.emit: """
+import std/os
+import std/strformat
+const thisDir = currentSourcePath().parentDir()
+
+{.emit: fmt"""
   #define STB_IMAGE_IMPLEMENTATION
-  #include "../stb/stb_image.h"
+  #include "{thisDir}/stb/stb_image.h"
 """.}
 
 const
