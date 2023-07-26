@@ -13,7 +13,7 @@ test "can load image":
   var
     width : int = 512
     height : int = 512
-    channels : int = 0
+    channels : int = STBI_default
     filename: cstring = cstring"testdata/image.png"
     img: cstring = stbi_load(filename, addr width, addr height, addr channels, 0);
   check not img.isNil
