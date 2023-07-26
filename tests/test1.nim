@@ -11,9 +11,9 @@ import stb_nim/stb_image
 
 test "can load image":
   var
-    width : int = 512
-    height : int = 512
-    channels : int = STBI_default
+    width : int
+    height : int
+    channels : int
     filename: cstring = cstring"testdata/image.png"
-    img: cstring = stbi_load(filename, addr width, addr height, addr channels, 0);
+    img: cstring = stbi_load(filename, addr width, addr height, addr channels, STBI_default);
   check not img.isNil
